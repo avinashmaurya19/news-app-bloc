@@ -4,6 +4,7 @@ import 'package:github_news_assignment/bloc/news_bloc.dart';
 import 'package:github_news_assignment/component/drop_down_list.dart';
 import 'package:github_news_assignment/constant/list_of_country.dart';
 
+
 class drawer extends StatefulWidget {
   const drawer({super.key});
 
@@ -15,9 +16,11 @@ class _drawerState extends State<drawer> {
   dynamic cName;
   dynamic country;
   dynamic findNews;
+  
 
   @override
   Widget build(BuildContext context) {
+    final age;
     return Drawer(
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 32),
