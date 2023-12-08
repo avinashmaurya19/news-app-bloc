@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final int agae;
     return Scaffold(
         drawer: drawer(),
         appBar: AppBar(
