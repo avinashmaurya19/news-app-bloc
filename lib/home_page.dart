@@ -13,15 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  dynamic cName;
-  dynamic country;
-  dynamic category;
-  dynamic findNews;
-  int pageNum = 1;
-  bool isPageLoading = false;
-  int pageSize = 10;
-  bool notFound = false;
-  List<int> data = [];
   bool isLoading = false;
 
   @override
@@ -31,18 +22,6 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           centerTitle: true,
           title: const Text('News'),
-          actions: [
-            IconButton(
-              onPressed: () {
-                country = null;
-                category = null;
-                findNews = null;
-                cName = null;
-                getNews();
-              },
-              icon: const Icon(Icons.refresh),
-            ),
-          ],
         ),
         body: BlocConsumer<NewsBloc, NewsState>(
             listener: (context, state) {},

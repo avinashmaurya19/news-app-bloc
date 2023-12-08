@@ -20,7 +20,6 @@ class _drawerState extends State<drawer> {
 
   @override
   Widget build(BuildContext context) {
-    final age;
     return Drawer(
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 32),
