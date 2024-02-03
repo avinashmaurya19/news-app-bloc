@@ -4,7 +4,6 @@ import 'package:github_news_assignment/bloc/news_bloc.dart';
 import 'package:github_news_assignment/component/drop_down_list.dart';
 import 'package:github_news_assignment/constant/list_of_country.dart';
 
-
 class drawer extends StatefulWidget {
   const drawer({super.key});
 
@@ -16,7 +15,6 @@ class _drawerState extends State<drawer> {
   dynamic cName;
   dynamic country;
   dynamic findNews;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +44,18 @@ class _drawerState extends State<drawer> {
                 DropDownList(
                   call: () {
                     country = listOfCountry[i]['code'];
-                    cName = listOfCountry[i]['name']!.toUpperCase();
+                    cName = listOfCountry[i]['name'];
                     BlocProvider.of<NewsBloc>(context).add(GetNews(
                         'https://newsapi.org/v2/top-headlines?country=$country&apiKey=58b98b48d2c74d9c94dd5dc296ccf7b6'));
                     Navigator.pop(context);
                   },
+                  // call: () {
+                  //   country = listOfCountry[i]['code'];
+                  //   cName = listOfCountry[i]['name']!.toUpperCase();
+                  //   BlocProvider.of<NewsBloc>(context).add(GetNews(
+                  //       'https://newsapi.org/v2/top-headlines?country=$country&apiKey=58b98b48d2c74d9c94dd5dc296ccf7b6'));
+                  //   Navigator.pop(context);
+                  // },
                   name: listOfCountry[i]['name']!.toUpperCase(),
                 ),
             ],
